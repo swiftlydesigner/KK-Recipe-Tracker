@@ -7,6 +7,7 @@
 # IoManager.py
 ## This file will contain printing and reading input from users
 
+
 class IoManager:
     def __init__(self):
         raise Exception("Fatal: Cannot create an instance of IoManager")
