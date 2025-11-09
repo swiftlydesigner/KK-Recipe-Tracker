@@ -2,7 +2,7 @@
 3005 Final - Autumn 2025
 
 # Team members
-Koa Hawn
+Koa Hawn<br>
 Kyle Parker
 
 # Object of this application
