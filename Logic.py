@@ -4,3 +4,5 @@
 #
 # Due Nov 14, 2025 @ 19:00
 
+# Logic.py
+## This file will contain general logic for the program
