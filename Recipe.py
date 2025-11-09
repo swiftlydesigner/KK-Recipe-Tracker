@@ -4,7 +4,7 @@
 #
 # Due Nov 14, 2025 @ 19:00
 
-import Ingredient
+from Ingredient import Ingredient
 
 from datetime import datetime
 
