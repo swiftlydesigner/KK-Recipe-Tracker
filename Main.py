@@ -10,7 +10,7 @@ from RecipeManager import RecipeManager # Usage: RecipeManager().method
 
 def main():
     input_str = IoManager.get_str("What is your name?")
-    input_str_non_empty = IoManager.get_str("What is your City?", is_empty=False)
+    input_str_non_empty = IoManager.get_str("What is your City?", empty_ok=False)
 
     print(f"Your name is {input_str}\nYour city is {input_str_non_empty}.")
 
