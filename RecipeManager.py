@@ -19,6 +19,7 @@ class RecipeManager:
         with open("recipes.psv", "r") as file:
             for line in file:
                 # TODO: Parse line ; use helper func
+                pass
 
         # TODO: Add error handling for file
         return recipes
