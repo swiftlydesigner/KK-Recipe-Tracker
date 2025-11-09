@@ -29,20 +29,21 @@ class IoManager:
 
         # Check if empty is acceptable and enforce rules
         if not empty_ok and len(response) == 0:
-            response = self.read_str(message, empty_ok, error=True)
+            response = IoManager.read_str(message, empty_ok, error=True)
 
         return response
 
     @staticmethod
     def get_int(message, error=False):
         '''Will read an int from the user and return a valid integer.'''
-
+        # TODO: Implement this
         # Note to programmer: Use try/catch to convert into int and use similar pattern to read_str (call itself and set error to True. Also add error check adding the message as above.)
         pass
 
     @staticmethod
     def get_float(message, error=False):
         '''Will read a float from the user and return a valid float.'''
+        # TODO: Implement this
         pass
 
 
