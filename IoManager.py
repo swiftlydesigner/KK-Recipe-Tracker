@@ -18,7 +18,7 @@ class IoManager:
         return input(f"{message}\n> ")
 
     @staticmethod
-    def read_str(self, message, empty_ok=True, error=False):
+    def get_str(self, message, empty_ok=True, error=False):
         '''Prints the message, and returns a valid string from the user.'''
 
         if error:
@@ -34,14 +34,14 @@ class IoManager:
         return response
 
     @staticmethod
-    def read_int(self, message, error=False):
+    def get_int(self, message, error=False):
         '''Will read an int from the user and return a valid integer.'''
 
         # Note to programmer: Use try/catch to convert into int and use similar pattern to read_str (call itself and set error to True. Also add error check adding the message as above.)
         pass
 
     @staticmethod
-    def read_float(self, message, error=False):
+    def get_float(self, message, error=False):
         '''Will read a float from the user and return a valid float.'''
         pass
 
