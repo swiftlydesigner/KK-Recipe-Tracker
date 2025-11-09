@@ -10,16 +10,16 @@ from datetime import datetime
 
 class Recipe:
     ''' Attributes:
-        - _name
-        - _chef
-        - _ingredients
-        - _tools
-        - _rating
-        - _cooking_time
-        - _prep_time
-        - _total_time
-        - _date_created
-        - _date_updated
+        - _name -> str
+        - _chef -> str
+        - _ingredients -> [Ingredient]
+        - _tools -> [str]
+        - _rating -> flat
+        - _cooking_time -> datetime.time
+        - _prep_time -> datetime.time
+        - _total_time -> datetime.time
+        - _date_created -> datetime
+        - _date_updated -> datetime
     '''
     def __init__(self, name=None, chef=None, ingredients=None, tools=None, rating=None, 
              cooking_time=None, prep_time=None, total_time=None, date_created=None):

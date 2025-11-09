@@ -6,7 +6,7 @@
 
 class RecipeManager:
     ''' Attributes:
-        _recipes: list of Recipe objects
+        - _recipes: list of Recipe objects -> [Recipe]
     '''
     def __init__(self):
         self._recipes = self.__read_from_psv()
