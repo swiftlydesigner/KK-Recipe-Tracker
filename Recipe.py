@@ -22,7 +22,7 @@ class Recipe:
         - _date_updated -> datetime
     '''
     def __init__(self, name=None, chef=None, ingredients=None, tools=None, rating=None, 
-             cooking_time=None, prep_time=None, total_time=None, date_created=None):
+             cooking_time=None, prep_time=None, total_time=None, date_created=None, date_updated=None):
         self._name = name
         self._chef = chef
         self._ingredients = ingredients
