@@ -4,7 +4,7 @@
 #
 # Due Nov 14, 2025 @ 19:00
 
-class Appplication:
+class Application:
         ''' Attributes:
 
         '''
