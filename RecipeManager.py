@@ -148,7 +148,7 @@ class RecipeManager:
         ]
 
     def __save_recipes(self, recipes):
-        success = True
+        success = False
         try:
             with open("recipes.psv", "w") as file:
                 header = "Name", "Chef", "Ingredients", "Tools", "Rating", "Cooking Time", "Prep Time", "Total Time", "Date"
@@ -156,9 +156,12 @@ class RecipeManager:
                 for recipe in recipes:
                     psv = self.__recipe_to_psv(recipe) + "\n"
                     file.write(psv)
+
+            success = True
         except IOError:
-            success = False
             print("Unable to write recipes!")
+        except NameError:
+            print("Warning! Fatal internal error!")
 
         return success
 
