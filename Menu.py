@@ -16,7 +16,7 @@ class Menu:
             valid = False
 
         # Check for valid to ensure it is of type int to guarantee > and < op compatability
-        if valid and selection < 0 or selection > self.__items.count():
+        if valid and selection < 0 or selection > self.__items.keys().count():
             valid = False
 
         return valid
