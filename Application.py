@@ -48,7 +48,7 @@ class Application:
             self.__manager.display_all()
 
         def __add_recipe(self):
-            pass
+            self.__manager.add_recipe()
 
         def __remove_recipe(self):
             pass

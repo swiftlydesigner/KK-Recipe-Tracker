@@ -60,3 +60,7 @@ class RecipeManager:
     def display_all(self):
         # TODO: Implement display_all
         pass
+
+    def add_recipe(self):
+        # TODO: Implement add_recipe
+        pass
