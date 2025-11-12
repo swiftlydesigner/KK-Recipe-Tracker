@@ -37,7 +37,7 @@ class Recipe:
 
     # Using as a human-readable stringify method.
     def __str__(self):
-        return (f"{self.__name}: Created by {self.__chef} [{self.__rating * "*"}{(5 - self.__rating) * " "}]"
+        return (f"{self.__name}: Created by {self.__chef} [{int(self.__rating) * "*"}{int(5 - self.__rating) * " "}]"
                 f"Total Time: {self.__total_time}, Prep Time: {self.__prep_time}, Cooking Time: {self.__cooking_time}")
 
     # MARK: - Getters and setters
