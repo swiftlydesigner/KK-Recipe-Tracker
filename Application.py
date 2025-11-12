@@ -57,7 +57,7 @@ class Application:
             self.__manager.edit_recipe()
 
         def __sort_recipes(self):
-            pass
+            self.__manager.sort_recipes()
 
         def __reccomend_recipe(self):
             pass

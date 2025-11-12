@@ -72,3 +72,8 @@ class RecipeManager:
     def edit_recipe(self):
         # TODO: Implement edit_recipe
         pass
+
+    def sort_recipes(self):
+        # TODO: Implement sort_recipes
+        # Prompt to see how to sort
+        pass
