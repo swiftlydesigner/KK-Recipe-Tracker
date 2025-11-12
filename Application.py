@@ -66,7 +66,7 @@ class Application:
             self.__manager.load_recipe()
 
         def __save_recipes(self):
-            pass
+            self.__manager.save_recipes()
 
         def __exit(self):
             pass

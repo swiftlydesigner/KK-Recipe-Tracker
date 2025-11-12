@@ -86,3 +86,7 @@ class RecipeManager:
     def load_recipe(self):
         # TODO: Implement load_recipe
         pass
+
+    def save_recipes(self):
+        # TODO: Implement save_recipe
+        pass
