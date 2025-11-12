@@ -4,6 +4,10 @@
 #
 # Due Nov 14, 2025 @ 19:00
 
+import Logic # Usage: Logic.func name
+from IoManager import IoManager # Usage: IoManager.method
+from RecipeManager import RecipeManager # Usage: RecipeManager().method
+
 class Application:
         ''' Attributes:
 
@@ -12,4 +16,7 @@ class Application:
                 pass
 
         def runApp(self):
-                pass
+            input_str = IoManager.get_str("What is your name?")
+            input_str_non_empty = IoManager.get_str("What is your City?", empty_ok=False)
+
+            print(f"Your name is {input_str}\nYour city is {input_str_non_empty}.")
