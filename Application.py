@@ -3,8 +3,8 @@
 # Autumn 2025
 #
 # Due Nov 14, 2025 @ 19:00
+from Menu import Menu
 
-import Logic # Usage: Logic.func name
 from IoManager import IoManager # Usage: IoManager.method
 from RecipeManager import RecipeManager # Usage: RecipeManager().method
 
@@ -15,8 +15,19 @@ class Application:
         '''
         def __init__(self):
             self.__manager = RecipeManager()
+            self.__menu = Menu({
+                "Display Recipes" : self.__display_recipes(),
+                "Add Recipe" : self.__add_recipe(),
+                "Remove Recipe" : self.__remove_recipe(),
+                "Edit Recipe" : self.__edit_recipe(),
+                "Sort Recipes" : self.__sort_recipes(),
+                "Recommend Recipe" : self.__reccomend_recipe(),
+                "Load Recipes" : self.__load_recipes(),
+                "Save Recipes" : self.__save_recipes(),
+                "Exit" : self.__exit()
+            })
 
-        def __show_menu(self):
+        def __perform_menu_interaction(self):
             pass
 
         def runApp(self):
@@ -24,3 +35,33 @@ class Application:
             input_str_non_empty = IoManager.get_str("What is your City?", empty_ok=False)
 
             print(f"Your name is {input_str}\nYour city is {input_str_non_empty}.")
+
+# MARK: - Actions
+
+        def __display_recipes(self):
+            pass
+
+        def __add_recipe(self):
+            pass
+
+        def __remove_recipe(self):
+            pass
+
+        def __edit_recipe(self):
+            pass
+
+        def __sort_recipes(self):
+            pass
+
+        def __reccomend_recipe(self):
+            pass
+
+        def __load_recipes(self):
+            pass
+
+        def __save_recipes(self):
+            pass
+
+        def __exit(self):
+            pass
+
