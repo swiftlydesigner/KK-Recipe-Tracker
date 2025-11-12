@@ -21,7 +21,7 @@ class Application:
                 "Remove Recipe" : self.__remove_recipe(),
                 "Edit Recipe" : self.__edit_recipe(),
                 "Sort Recipes" : self.__sort_recipes(),
-                "Recommend Recipe" : self.__reccomend_recipe(),
+                "Recommend Recipe" : self.__recommend_recipe(),
                 "Load Recipes" : self.__load_recipes(),
                 "Save Recipes" : self.__save_recipes(),
                 "Exit" : self.__exit()
@@ -59,7 +59,7 @@ class Application:
         def __sort_recipes(self):
             self.__manager.sort_recipes()
 
-        def __reccomend_recipe(self):
+        def __recommend_recipe(self):
             pass
 
         def __load_recipes(self):
