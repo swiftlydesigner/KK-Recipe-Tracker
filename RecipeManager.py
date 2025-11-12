@@ -17,15 +17,15 @@ class RecipeManager:
 
     # MARK: - Private Data Mutators
     @staticmethod
-    def __psv(data):
+    def __csv(data):
         if isinstance(data, list) or isinstance(data, tuple):
-            return "|".join(data)
+            return ",".join(str(d).replace(",", "\\,") for d in data)
         return data
 
     def __recipe_to_psv(self, recipe) -> str:
         l = recipe.get_list()
-        l = [RecipeManager.__psv(ele) for ele in l]
-        return "|".join(str(ele).replace("|", "\\|") for ele in l)
+        l = [RecipeManager.__csv(ele) for ele in l]
+        return "|".join(str(ele).replace("|", "\\|").replace(",", "\\,,") for ele in l)
 
     # MARK: - Private Handlers
     def __read_from_psv(self):
