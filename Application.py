@@ -63,7 +63,7 @@ class Application:
             self.__manager.recommend_recipe()
 
         def __load_recipes(self):
-            pass
+            self.__manager.load_recipe()
 
         def __save_recipes(self):
             pass

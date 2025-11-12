@@ -82,3 +82,7 @@ class RecipeManager:
         # TODO: Implement recommend_recipe
         # Prompt to see if it should rec based on duration, no ingredients, or something else
         pass
+
+    def load_recipe(self):
+        # TODO: Implement load_recipe
+        pass
