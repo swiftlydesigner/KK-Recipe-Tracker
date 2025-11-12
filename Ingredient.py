@@ -19,6 +19,9 @@ class Ingredient:
         self.__quantity = quantity
         self.__unit = unit
 
+    def __str__(self):
+        return f"{self.__name} {self.__quantity} {self.__unit}"
+
     # MARK: Setters and Getters
     @property
     def name(self):
