@@ -77,3 +77,8 @@ class RecipeManager:
         # TODO: Implement sort_recipes
         # Prompt to see how to sort
         pass
+
+    def recommend_recipe(self):
+        # TODO: Implement recommend_recipe
+        # Prompt to see if it should rec based on duration, no ingredients, or something else
+        pass

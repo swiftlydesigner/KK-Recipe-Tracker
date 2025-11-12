@@ -60,7 +60,7 @@ class Application:
             self.__manager.sort_recipes()
 
         def __recommend_recipe(self):
-            pass
+            self.__manager.recommend_recipe()
 
         def __load_recipes(self):
             pass
