@@ -3,6 +3,7 @@
 # Autumn 2025
 #
 # Due Nov 14, 2025 @ 19:00
+from Recipe import Recipe
 
 class RecipeManager:
     ''' Attributes:
@@ -14,6 +15,19 @@ class RecipeManager:
     def __del__(self):
         self.__save_recipes(self._recipes)
 
+    # MARK: - Private Data Mutators
+    @staticmethod
+    def __psv(data):
+        if isinstance(data, list) or isinstance(data, tuple):
+            return "|".join(data)
+        return data
+
+    def __recipe_to_psv(self, recipe) -> str:
+        l = recipe.get_list()
+        l = [RecipeManager.__psv(ele) for ele in l]
+        return "|".join(str(ele).replace("|", "\\|") for ele in l)
+
+    # MARK: - Private Handlers
     def __read_from_psv(self):
         recipes = list()
         with open("recipes.psv", "r") as file:
@@ -25,12 +39,19 @@ class RecipeManager:
         return recipes
 
     def __save_recipes(self, recipes):
-        # TODO: Open file and write header
-        for recipe in recipes:
-            # TODO: Write recipe
-            pass
+        success = True
+        try:
+            with open("recipes.psv", "w") as file:
+                header = "Name", "Chef", "Ingredients", "Tools", "Rating", "Cooking Time", "Prep Time", "Total Time", "Date"
+                file.write("|".join(header) + "\n")
+                for recipe in recipes:
+                    psv = self.__recipe_to_psv(recipe) + "\n"
+                    file.write(psv)
+        except IOError:
+            success = False
+            print("Unable to write recipes!")
 
-        # TODO: Add error handling for file
+        return success
 
     def __search_for_recipe(self, name):
         # TODO: Use linear search
@@ -96,4 +117,11 @@ class RecipeManager:
 
     def save_recipes(self) -> bool:
         # TODO: Implement save_recipe
-        pass
+        success = False
+
+        try:
+            success = self.__save_recipes(self._recipes)
+        except:
+            print("Unknown error occurred during save process!")
+
+        return success

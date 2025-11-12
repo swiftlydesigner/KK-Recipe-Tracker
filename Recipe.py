@@ -41,6 +41,10 @@ class Recipe:
                 f"Total Time: {self.__total_time}, Prep Time: {self.__prep_time}, Cooking Time: {self.__cooking_time}")
 
     # MARK: - Getters and setters
+    def get_list(self):
+        return [self.__name, self.__chef, self.__ingredients, self.__tools, self.__rating,
+                self.__cooking_time, self.__prep_time, self.__total_time, self.__date_created, self.__date_updated]
+
     def name(self):
         return self.__name
 
