@@ -10,10 +10,14 @@ from RecipeManager import RecipeManager # Usage: RecipeManager().method
 
 class Application:
         ''' Attributes:
-
+            - __manager -> RecipeManager
+            - __menu -> Menu
         '''
         def __init__(self):
-                pass
+            self.__manager = RecipeManager()
+
+        def _show_menu(self):
+            pass
 
         def runApp(self):
             input_str = IoManager.get_str("What is your name?")
