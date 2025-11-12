@@ -68,3 +68,7 @@ class RecipeManager:
     def remove_recipe(self):
         # TODO: Implement remove_recipe()
         pass
+
+    def edit_recipe(self):
+        # TODO: Implement edit_recipe
+        pass
