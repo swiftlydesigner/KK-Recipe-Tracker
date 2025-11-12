@@ -45,7 +45,7 @@ class Application:
 # MARK: - Actions
 
         def __display_recipes(self):
-            pass
+            self.__manager.display_all()
 
         def __add_recipe(self):
             pass

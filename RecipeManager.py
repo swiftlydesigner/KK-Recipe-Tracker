@@ -56,3 +56,7 @@ class RecipeManager:
     def __sort_recipes_by_rating(self):
         # TODO: Use bubble sort, based off rating
         pass
+
+    def display_all(self):
+        # TODO: Implement display_all
+        pass
