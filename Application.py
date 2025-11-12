@@ -28,7 +28,13 @@ class Application:
             })
 
         def __perform_menu_interaction(self):
-            pass
+            self.__menu.show_menu()
+            option = self.__menu.get_user_response()
+            success = self.__menu.handle_user_response(option)
+
+            if not success:
+                print("Failed to run the menu script!")
+
 
         def runApp(self):
             input_str = IoManager.get_str("What is your name?")
