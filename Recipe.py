@@ -35,6 +35,10 @@ class Recipe:
         self.__date_created = date_created if not None else datetime.now()
         self.__date_updated = date_updated if not None else datetime.now()
 
+    # Using as a human-readable stringify method.
+    def __str__(self):
+        return (f"{self.__name}: Created by {self.__chef} [{self.__rating * "*"}{(5 - self.__rating) * " "}]"
+                f"Total Time: {self.__total_time}, Prep Time: {self.__prep_time}, Cooking Time: {self.__cooking_time}")
 
     # MARK: - Getters and setters
     def name(self):
