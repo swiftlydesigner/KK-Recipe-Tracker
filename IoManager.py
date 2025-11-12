@@ -30,7 +30,7 @@ class IoManager:
 
         # Check if empty is acceptable and enforce rules
         if not empty_ok and len(response) == 0:
-            response = IoManager.read_str(message, empty_ok, error=True)
+            response = IoManager.get_str(message, empty_ok, error=True)
 
         return response
 
