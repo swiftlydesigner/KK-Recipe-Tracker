@@ -61,6 +61,10 @@ class RecipeManager:
         # TODO: Implement display_all
         pass
 
+    def search_for_recipe(self):
+        # TODO: Implement search
+        pass
+
     def add_recipe(self):
         # TODO: Implement add_recipe
         pass

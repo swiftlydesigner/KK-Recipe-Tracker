@@ -19,6 +19,7 @@ class Application:
             self.__manager = RecipeManager()
             self.__menu = Menu({
                 "Display Recipes" : self.__display_recipes(),
+                "Search for Recipe": self.__search_for_recipe(),
                 "Add Recipe" : self.__add_recipe(),
                 "Remove Recipe" : self.__remove_recipe(),
                 "Edit Recipe" : self.__edit_recipe(),
@@ -48,6 +49,9 @@ class Application:
 
         def __display_recipes(self):
             self.__manager.display_all()
+
+        def __search_for_recipe(self):
+            self.__manager.search_for_recipe()
 
         def __add_recipe(self):
             self.__manager.add_recipe()
