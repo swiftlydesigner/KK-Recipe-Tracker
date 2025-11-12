@@ -6,25 +6,40 @@
 #---------DONE----------
 from Unit import Unit
 
+
 class Ingredient:
     ''' Attributes:
-        - _name -> str
-        - _quantity -> Unit
+        - __name -> str
+        - __quantity -> float
+        - __unit -> str
     '''
-    def __init__(self, name, quantity):
-        self._name = name
-        self._quantity = quantity
+
+    def __init__(self, name, quantity, unit):
+        self.__name = name
+        self.__quantity = quantity
+        self.__unit = unit
 
     # MARK: Setters and Getters
+    @property
     def name(self):
-        return self._name
+        return self.__name
 
-    def update_name(self, name):
-        self._name = name
+    @name.setter
+    def name(self, name):
+        self.__name = name
 
+    @property
     def amount(self):
-        return self._quantity
+        return self.__quantity
 
-    def update_amount(self, amount):
-        self._quantity = amount
+    @amount.setter
+    def amount(self, amount):
+        self.__quantity = amount
 
+    @property
+    def unit(self):
+        return self.__unit
+
+    @unit.setter
+    def unit(self, unit):
+        self.__unit = unit
