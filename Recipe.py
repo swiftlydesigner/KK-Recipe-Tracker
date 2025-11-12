@@ -6,97 +6,96 @@
 #-------------DONE----------------
 
 from Ingredient import Ingredient
-
 from datetime import datetime
 
 class Recipe:
     ''' Attributes:
-        - _name -> str
-        - _chef -> str
-        - _ingredients -> [Ingredient]
-        - _tools -> [str]
-        - _rating -> flat
-        - _cooking_time -> datetime.time
-        - _prep_time -> datetime.time
-        - _total_time -> datetime.time
-        - _date_created -> datetime
-        - _date_updated -> datetime
+        - __name -> str
+        - __chef -> str
+        - __ingredients -> [Ingredient]
+        - __tools -> [str]
+        - __rating -> float
+        - __cooking_time -> datetime.time
+        - __prep_time -> datetime.time
+        - __total_time -> datetime.time
+        - __date_created -> datetime
+        - __date_updated -> datetime
     '''
-    def __init__(self, name=None, chef=None, ingredients=None, tools=None, rating=None, 
-             cooking_time=None, prep_time=None, total_time=None, date_created=None, date_updated=None):
-        self._name = name
-        self._chef = chef
-        self._ingredients = ingredients
-        self._tools = tools
-        self._rating = rating
-        self._cooking_time = cooking_time
-        self._prep_time = prep_time
-        self._total_time = total_time
-        self._date_created = date_created if not None else datetime.now()
-        self._date_updated = date_updated if not None else datetime.now()
+
+    def __init__(self, name=None, chef=None, ingredients=None, tools=None, rating=None,
+                 cooking_time=None, prep_time=None, total_time=None, date_created=None, date_updated=None):
+        self.__name = name
+        self.__chef = chef
+        self.__ingredients = ingredients
+        self.__tools = tools
+        self.__rating = rating
+        self.__cooking_time = cooking_time
+        self.__prep_time = prep_time
+        self.__total_time = total_time
+        self.__date_created = date_created if not None else datetime.now()
+        self.__date_updated = date_updated if not None else datetime.now()
+
 
     # MARK: - Getters and setters
     def name(self):
-        return self._name
+        return self.__name
 
     def update_name(self, name):
-        self._name = name
-        self._date_updated = datetime.now()
+        self.__name = name
+        self.__date_updated = datetime.now()
 
     def chef(self):
-        return self._chef
+        return self.__chef
 
     def update_chef(self, chef):
-        self._chef = chef
-        self._date_updated = datetime.now()
+        self.__chef = chef
+        self.__date_updated = datetime.now()
 
     def ingredients(self):
-        return self._ingredients
+        return self.__ingredients
 
     def update_ingredients(self, ingredients):
-        self._ingredients = ingredients
-        self._date_updated = datetime.now()
+        self.__ingredients = ingredients
+        self.__date_updated = datetime.now()
 
     def tools(self):
-        return self._tools
+        return self.__tools
 
     def update_tools(self, tools):
-        self._tools = tools
-        self._date_updated = datetime.now()
+        self.__tools = tools
+        self.__date_updated = datetime.now()
 
     def rating(self):
-        return self._rating
+        return self.__rating
 
     def update_rating(self, rating):
-        self._rating = rating
-        self._date_updated = datetime.now()
+        self.__rating = rating
+        self.__date_updated = datetime.now()
 
     def cooking_time(self):
-        return self._cooking_time
+        return self.__cooking_time
 
     def update_cooking_time(self, cooking_time):
-        self._cooking_time = cooking_time
-        self._date_updated = datetime.now()
+        self.__cooking_time = cooking_time
+        self.__date_updated = datetime.now()
 
     def prep_time(self):
-        return self._prep_time
+        return self.__prep_time
 
     def update_prep_time(self, prep_time):
-        self._prep_time = prep_time
-        self._date_updated = datetime.now()
+        self.__prep_time = prep_time
+        self.__date_updated = datetime.now()
 
     def total_time(self):
-        return self._total_time
+        return self.__total_time
 
     def update_total_time(self, total_time):
-        self._total_time = total_time
-        self._date_updated = datetime.now()
+        self.__total_time = total_time
+        self.__date_updated = datetime.now()
 
-
-    # The following dates to not have a setter as they should not be modified except by internal mechanics
+    # The following dates do not have a setter as they should not be modified except by internal mechanics
     def date_created(self):
-        return self._date_created
+        return self.__date_created
 
     def date_updated(self):
-        return self._date_updated
-
+        return self.__date_updated
