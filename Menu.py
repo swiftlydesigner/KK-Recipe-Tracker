@@ -11,12 +11,13 @@ class Menu:
         self.__items = actions
 
     def __validate_input(self, selection):
-        valid = True
+        valid = selection is not None
+
         if not isinstance(selection, int):
             valid = False
 
         # Check for valid to ensure it is of type int to guarantee > and < op compatability
-        if valid and selection < 0 or selection > len(self.__items):
+        if valid and (selection < 0 or selection > len(self.__items)):
             valid = False
 
         return valid
@@ -26,7 +27,7 @@ class Menu:
         item = 1
         if self.__items is not None: # Avoid exception
             print("0) Cancel")
-            for name in sorted(self.__items.keys()):
+            for name in self.__items.keys():
                 print(f"{item}) {name}")
                 item += 1
         else:
