@@ -186,6 +186,7 @@ class RecipeManager:
         i = 0
         while i < len(self.__recipes):
             print(self.__recipes[i])
+            i += 1
         pass
 
     def search_for_recipe(self):
