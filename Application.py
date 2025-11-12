@@ -3,6 +3,8 @@
 # Autumn 2025
 #
 # Due Nov 14, 2025 @ 19:00
+import sys
+
 from Menu import Menu
 
 from IoManager import IoManager # Usage: IoManager.method
@@ -69,5 +71,9 @@ class Application:
             self.__manager.save_recipes()
 
         def __exit(self):
-            pass
+            success = self.__manager.save_recipes()
+            if not success:
+                print("Failed to save recipes!")
+
+            sys.exit(0)
 
