@@ -16,7 +16,7 @@ class Application:
         def __init__(self):
             self.__manager = RecipeManager()
 
-        def _show_menu(self):
+        def __show_menu(self):
             pass
 
         def runApp(self):
