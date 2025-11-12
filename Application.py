@@ -7,7 +7,6 @@ import sys
 
 from Menu import Menu
 
-from IoManager import IoManager # Usage: IoManager.method
 from RecipeManager import RecipeManager # Usage: RecipeManager().method
 
 class Application:
