@@ -38,12 +38,12 @@ class Application:
             if not success:
                 print("Failed to run the menu script!")
 
+            return success
 
-        def runApp(self):
-            input_str = IoManager.get_str("What is your name?")
-            input_str_non_empty = IoManager.get_str("What is your City?", empty_ok=False)
 
-            print(f"Your name is {input_str}\nYour city is {input_str_non_empty}.")
+        def run_app(self):
+            # Run the menu, unless an error occurs, then exit the process
+            while self.__perform_menu_interaction(): pass
 
 # MARK: - Actions
 
