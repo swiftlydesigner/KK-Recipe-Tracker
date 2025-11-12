@@ -22,13 +22,19 @@ class RecipeManager:
     @staticmethod
     def __csv(data):
         if isinstance(data, list) or isinstance(data, tuple):
-            return ",".join(str(d).replace(",", "\\,") for d in data)
+            l = []
+            for d in data:
+                if isinstance(d, list):
+                    l.append(RecipeManager.__csv(d))
+                else:
+                    l.append(str(d).replace(",", "?")) # Custom storage to avoid collision with ,
+            return ",".join(l)
         return data
 
     def __recipe_to_psv(self, recipe) -> str:
         l = recipe.get_list()
         l = [RecipeManager.__csv(ele) for ele in l]
-        return "|".join(str(ele).replace("|", "\\|").replace(",", "\\,,") for ele in l)
+        return "|".join(str(ele).replace("|", "\\|") for ele in l)
 
     # MARK: - Private Handlers
     def __read_from_psv(self):
