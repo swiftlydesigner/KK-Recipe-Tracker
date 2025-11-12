@@ -83,10 +83,10 @@ class RecipeManager:
         # Prompt to see if it should rec based on duration, no ingredients, or something else
         pass
 
-    def load_recipes(self):
+    def load_recipes(self) -> bool:
         # TODO: Implement load_recipe
         pass
 
-    def save_recipes(self):
+    def save_recipes(self) -> bool:
         # TODO: Implement save_recipe
         pass
