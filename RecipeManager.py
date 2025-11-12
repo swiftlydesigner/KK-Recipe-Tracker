@@ -33,10 +33,10 @@ class RecipeManager:
     # MARK: - Private Handlers
     def __read_from_psv(self):
         recipes = list()
-        with open("recipes.psv", "r") as file:
-            for line in file:
-                # TODO: Parse line ; use helper func
-                pass
+        # with open("recipes.psv", "r") as file:
+        #     for line in file:
+        #         # TODO: Parse line ; use helper func
+        #         pass
 
         # TODO: Add error handling for file
         return [
