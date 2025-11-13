@@ -47,7 +47,11 @@ class Application:
 
         def run_app(self):
             # Run the menu, unless an error occurs, then exit the process
-            while self.__perform_menu_interaction(main_menu=True): pass
+            try:
+                while self.__perform_menu_interaction(main_menu=True): pass
+            except KeyboardInterrupt:
+                print("\n\nKeyboard interrupt! Exiting...")
+                self.__exit()
 
 # MARK: - Actions
 
