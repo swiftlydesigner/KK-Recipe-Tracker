@@ -184,11 +184,12 @@ class RecipeManager:
         pass
 
     def __sort_recipes_by_time(self):
-        # TODO: Use bubble sort, based off time
         for i in range(len(self.__recipes)):
             for j in range(i, len(self.__recipes)):
-                # Swap i and j if ele[i] > ele[j]
-                pass
+                if self.__recipes[i].total_time() > self.__recipes[j].total_time():
+                    tmp = self.__recipes[i]
+                    self.__recipes[i] = self.__recipes[j]
+                    self.__recipes[j] = tmp
 
     def __sort_recipes_by_name(self):
         # TODO: Use bubble sort, based off name of recipe
