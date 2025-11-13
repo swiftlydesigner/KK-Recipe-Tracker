@@ -29,8 +29,8 @@ class Application:
                 "Exit" : self.__exit
             })
 
-        def __perform_menu_interaction(self):
-            self.__menu.show_menu()
+        def __perform_menu_interaction(self, main_menu=False):
+            self.__menu.show_menu(main_menu)
             option = self.__menu.get_user_response()
             success = self.__menu.handle_user_response(option)
 
@@ -39,7 +39,7 @@ class Application:
 
         def run_app(self):
             # Run the menu, unless an error occurs, then exit the process
-            while self.__perform_menu_interaction(): pass
+            while self.__perform_menu_interaction(main_menu=True): pass
 
 # MARK: - Actions
 

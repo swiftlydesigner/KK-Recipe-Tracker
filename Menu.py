@@ -23,10 +23,11 @@ class Menu:
         return valid
 
 
-    def show_menu(self):
+    def show_menu(self, main_menu=False):
         item = 1
         if self.__items is not None: # Avoid exception
-            print("0) Cancel")
+            if not main_menu:
+                print("0) Cancel")
             for name in self.__items.keys():
                 print(f"{item}) {name}")
                 item += 1
@@ -45,7 +46,7 @@ class Menu:
         success = False
         if self.__items is not None:
             if user_response != 0:
-                key = sorted(self.__items.keys())[user_response - 1]
+                key = list(self.__items.keys())[user_response - 1]
                 func = self.__items[key]
                 func()
                 success = True
