@@ -17,25 +17,22 @@ class Application:
         def __init__(self):
             self.__manager = RecipeManager()
             self.__menu = Menu({
-                "Display Recipes" : self.__display_recipes(),
-                "Search for Recipe": self.__search_for_recipe(),
-                "Add Recipe" : self.__add_recipe(),
-                "Remove Recipe" : self.__remove_recipe(),
-                "Edit Recipe" : self.__edit_recipe(),
-                "Sort Recipes" : self.__sort_recipes(),
-                "Recommend Recipe" : self.__recommend_recipe(),
-                "Load Recipes" : self.__load_recipes(),
-                "Save Recipes" : self.__save_recipes(),
-                "Exit" : self.__exit()
+                "Display Recipes" : self.__display_recipes,
+                "Search for Recipe": self.__search_for_recipe,
+                "Add Recipe" : self.__add_recipe,
+                "Remove Recipe" : self.__remove_recipe,
+                "Edit Recipe" : self.__edit_recipe,
+                "Sort Recipes" : self.__sort_recipes,
+                "Recommend Recipe" : self.__recommend_recipe,
+                "Load Recipes" : self.__load_recipes,
+                "Save Recipes" : self.__save_recipes,
+                "Exit" : self.__exit
             })
 
         def __perform_menu_interaction(self):
             self.__menu.show_menu()
             option = self.__menu.get_user_response()
             success = self.__menu.handle_user_response(option)
-
-            if not success:
-                print("Failed to run the menu script!")
 
             return success
 
@@ -74,9 +71,16 @@ class Application:
             self.__manager.save_recipes()
 
         def __exit(self):
+            print("Exiting...")
+            print("Writing recipes....")
             success = self.__manager.save_recipes()
+
             if not success:
                 print("Failed to save recipes!")
+            else:
+                print("Recipes successfully saved!")
+
+            print("Goodbye!")
 
             sys.exit(0)
 

@@ -49,6 +49,6 @@ class Menu:
                 func = self.__items[key]
                 func()
                 success = True
-            # else, do nothing
+            # fi user_response != 0; do nothing
 
         return success
