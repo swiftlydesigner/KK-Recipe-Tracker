@@ -7,6 +7,8 @@ from datetime import time
 
 from Ingredient import Ingredient
 from Recipe import Recipe
+from RecipeFactory import RecipeFactory, RecipeMalformedError
+
 
 class RecipeManager:
     ''' Attributes:
@@ -38,13 +40,23 @@ class RecipeManager:
 
     # MARK: - Private Handlers
     def __read_from_psv(self):
-        recipes = list()
-        # with open("recipes.psv", "r") as file:
-        #     for line in file:
-        #         # TODO: Parse line ; use helper func
-        #         pass
+        recipes = []
+        # try:
+        #     with open("Recipes.csv", "r") as file:
+        #         lines = file.readlines()
+        #         recipes = [RecipeManager.__csv(line) for line in lines]
+        #
+        # except FileNotFoundError:
+        #     print("Recipes.csv not found")
+        # except IOError:
+        #     print("Recipes.csv is not available! (Check permissions)")
+        # except RecipeMalformedError:
+        #     print("Input recipe list was malformed! No data could be read!")
+        # except:
+        #     print("Something went wrong while reading Recipes.csv. :(")
+        # recipes = list()
 
-        # TODO: Add error handling for file
+        # TODO: Complete Recipe Factory
         return [
         Recipe(
             name="Classic Beef Stroganoff",
