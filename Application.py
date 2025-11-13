@@ -4,9 +4,9 @@
 #
 # Due Nov 14, 2025 @ 19:00
 import sys
+import os
 
 from Menu import Menu
-
 from RecipeManager import RecipeManager # Usage: RecipeManager().method
 
 class Application:
@@ -29,13 +29,21 @@ class Application:
                 "Exit" : self.__exit
             })
 
+        @staticmethod
+        def __clear_screen():
+            os.system("clear || cls")
+
+
         def __perform_menu_interaction(self, main_menu=False):
+            Application.__clear_screen()
             self.__menu.show_menu(main_menu)
             option = self.__menu.get_user_response()
             success = self.__menu.handle_user_response(option)
 
-            return success
+            Application.__clear_screen()
+            input("Press return to continue...")
 
+            return success
 
         def run_app(self):
             # Run the menu, unless an error occurs, then exit the process
