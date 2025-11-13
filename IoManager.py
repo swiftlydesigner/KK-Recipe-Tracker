@@ -7,7 +7,6 @@
 # IoManager.py
 ## This file will contain printing and reading input from users
 
-
 class IoManager:
     def __init__(self):
         raise Exception("Fatal: Cannot create an instance of IoManager")
@@ -15,12 +14,12 @@ class IoManager:
 
     @staticmethod
     def _get_input(message):
-        ''' Gets input from the user with a pre-defined format.'''
+        """ Gets input from the user with a pre-defined format."""
         return input(f"{message}\n> ")
 
     @staticmethod
     def get_str(message, empty_ok=True, error=False):
-        '''Prints the message, and returns a valid string from the user.'''
+        """Prints the message, and returns a valid string from the user."""
 
         if error:
             print("Bad user input. Please enter a valid string.", end='')
@@ -36,14 +35,24 @@ class IoManager:
 
     @staticmethod
     def get_int(message, error=False):
-        '''Will read an int from the user and return a valid integer.'''
-        # TODO: Implement this
-        # Note to programmer: Use try/catch to convert into int and use similar pattern to read_str (call itself and set error to True. Also add error check adding the message as above.)
-        pass
+        """Will read an int from the user and return a valid integer."""
+        user_int = None
+
+        if error:
+            print("Bad user input. Please enter a valid int.", end='')
+
+        response = IoManager._get_input(message)
+
+        try:
+            user_int = int(response)
+        except ValueError:
+            user_int = IoManager.get_int(message, error=True)
+
+        return user_int
 
     @staticmethod
     def get_float(message, error=False):
-        '''Will read a float from the user and return a valid float.'''
+        """Will read a float from the user and return a valid float."""
         # TODO: Implement this
         pass
 
