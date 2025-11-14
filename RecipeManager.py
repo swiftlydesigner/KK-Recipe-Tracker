@@ -180,7 +180,7 @@ class RecipeManager:
     def __search_for_recipe(self, name):
         # TODO: Use linear search
         # TODO: If there is time, use binary search
-
+        # Search for recipe, by name
         pass
 
     def __sort_recipes_by_time(self):
@@ -193,14 +193,17 @@ class RecipeManager:
 
     def __sort_recipes_by_name(self):
         # TODO: Use bubble sort, based off name of recipe
+        # see __sort_recipes_by_time for bubble sort, or use a more efficient alg
         pass
 
     def __sort_recipes_by_date(self):
         # TODO: Use bubble sort, based off date created
+        # see __sort_recipes_by_time for bubble sort, or use a more efficient alg
         pass
 
     def __sort_recipes_by_rating(self):
         # TODO: Use bubble sort, based off rating
+        # see __sort_recipes_by_time for bubble sort, or use a more efficient alg
         pass
 
     # Display all recipes.
@@ -213,23 +216,29 @@ class RecipeManager:
 
     def search_for_recipe(self):
         # TODO: Implement search
+        # Search for a recipe based on name. Or extend this to any field. Implement sorting in the private function (see above).
+        # I have this public interface since I am used to proper Software Engineering principles.
+        # You can create a menu object and call different sort functions as needed (see example of Menu in Application.py)
         pass
 
     def add_recipe(self):
         # TODO: Implement add_recipe
+        # Prompt for each field, then use RecipeFactory to generate a recipe object and save add it to the list
         pass
 
     def remove_recipe(self):
         # TODO: Implement remove_recipe()
+        # List all items with a for or while loop
         pass
 
     def edit_recipe(self):
         # TODO: Implement edit_recipe
+        # Use menu object as in Application
         pass
 
     def sort_recipes(self):
         # TODO: Implement sort_recipes
-        # Prompt to see how to sort
+        # Prompt to see how to sort. Then call one of the functions above. Use Menu object! See Application.py for example. Ask AI if you are unsure.
         pass
 
     def recommend_recipe(self):
