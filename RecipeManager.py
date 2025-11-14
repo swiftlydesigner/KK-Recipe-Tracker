@@ -177,22 +177,26 @@ class RecipeManager:
 
         return success
 
-    def __search_for_recipe(self, name):
+    def __search_for_recipe(self, name, partial=False):
         # TODO: Use linear search
         # TODO: If there is time, use binary search
         # Search for recipe, by name
         if not name:
             return -1
         target = name.strip().lower()
-        for i, r in enumerate(self.__recipes):
-            rname = getattr(r, "name", "")
-            if not isinstance(rname, str):
+        for i, recipe in enumerate(self.__recipes):
+            try:
+                recipe_name =str(getattr(recipe, "name", "")).lower()
+                if partial:
+                    if target in recipe_name:
+                        return i
+                else:
+                    if target == recipe_name:
+                        return i
+            except (AttributeError, TypeError) as e:
+                print(f"Error processing recipe: {e}")
                 continue
-            rname_l = rname.lower()
-            if (partial and target in rname_l) or (not partial and rname_l == target):
-                return i
         return -1
-
 
     def __sort_recipes_by_time(self):
         for i in range(len(self.__recipes)):
@@ -205,17 +209,72 @@ class RecipeManager:
     def __sort_recipes_by_name(self):
         # TODO: Use bubble sort, based off name of recipe
         # see __sort_recipes_by_time for bubble sort, or use a more efficient alg
-        pass
+        n = len(self.__recipes)
+        for i in range(n):
+            swapped = False
+            for j in range(0, n - i - 1):
+                try:
+                    current_recipe_name = str(getattr(self.__recipes[j], 'name', '')).lower()
+                    next_recipe_name = str(getattr(self.__recipes[j + 1], 'name', '')).lower()
+
+                    if current_recipe_name > next_recipe_name:
+                        self.__recipes[j], self.__recipes[j + 1] = self.__recipes[j + 1], self.__recipes[j]
+                        swapped = True
+                except (AttributeError, TypeError) as e:
+                    print(f"Error comparing recipe names: {e}")
+                    continue
+            if not swapped:
+                break
 
     def __sort_recipes_by_date(self):
         # TODO: Use bubble sort, based off date created
-        # see __sort_recipes_by_time for bubble sort, or use a more efficient alg
-        pass
+        n = len(self.__recipes)
+        for i in range(n):
+            swapped = False
+            for j in range(0, n - i - 1):
+                try:
+                    current_date = getattr(self.__recipes[j], 'date_created', None)
+                    next_date = getattr(self.__recipes[j + 1], 'date_created', None)
+
+                    if current_date is None and next_date is not None:
+                        self.__recipes[j], self.__recipes[j + 1] = self.__recipes[j + 1], self.__recipes[j]
+                        swapped = True
+                    elif (current_date is not None and next_date is not None and
+                          current_date > next_date):
+                        self.__recipes[j], self.__recipes[j + 1] = self.__recipes[j + 1], self.__recipes[j]
+                        swapped = True
+                except (AttributeError, TypeError) as e:
+                    print(f"Error comparing recipe dates: {e}")
+                    continue
+            if not swapped:
+                break
 
     def __sort_recipes_by_rating(self):
         # TODO: Use bubble sort, based off rating
         # see __sort_recipes_by_time for bubble sort, or use a more efficient alg
-        pass
+        n = len(self.__recipes)
+        for i in range(n):
+            swapped = False
+            for j in range(0, n - i - 1):
+                try:
+                    current_rating = getattr(self.__recipes[j], 'rating', 0)
+                    next_rating = getattr(self.__recipes[j + 1], 'rating', 0)
+
+                    if current_rating is None:
+                        current_rating = 0
+                    if next_rating is None:
+                        next_rating = 0
+                    current_rating = float(current_rating)
+                    next_rating = float(next_rating)
+                    if current_rating < next_rating:
+                        self.__recipes[j], self.__recipes[j + 1] = self.__recipes[j + 1], self.__recipes[j]
+                        swapped = True
+                except (ValueError, TypeError) as e:
+                    print(f"Error comparing recipe ratings: {e}")
+                    continue
+            if not swapped:
+                break
+        print(f"Recipes sorted by rating. Total recipes: {n}")
 
     # Display all recipes.
     def display_all(self):
