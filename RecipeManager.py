@@ -41,21 +41,21 @@ class RecipeManager:
     # MARK: - Private Handlers
     def __read_from_psv(self):
         recipes = []
-        # try:
-        #     with open("Recipes.csv", "r") as file:
-        #         lines = file.readlines()
-        #         recipes = [RecipeManager.__csv(line) for line in lines]
-        #
-        # except FileNotFoundError:
-        #     print("Recipes.csv not found")
-        # except IOError:
-        #     print("Recipes.csv is not available! (Check permissions)")
-        # except RecipeMalformedError:
-        #     print("Input recipe list was malformed! No data could be read!")
-        # except:
-        #     print("Something went wrong while reading Recipes.csv. :(")
-        # recipes = list()
+        try:
+            with open("Recipes.psv", "r") as file:
+                lines = file.readlines()[1:] # Skip header
+                recipes = [RecipeFactory.create_from_psv_line(line) for line in lines]
 
+        except FileNotFoundError:
+            print("Recipes.psv not found")
+        except IOError:
+            print("Recipes.psv is not available! (Check permissions)")
+        except RecipeMalformedError:
+            print("Input recipe list was malformed! No data could be read!")
+        except:
+            print("Something went wrong while reading Recipes.csv. :(")
+
+        return recipes
         # TODO: Complete Recipe Factory
         return [
         Recipe(
