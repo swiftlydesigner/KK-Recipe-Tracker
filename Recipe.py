@@ -7,7 +7,7 @@
 
 #-------------DONE----------------
 
-from Ingredient import Ingredient
+from MasterTime import MasterTime
 from datetime import datetime
 
 class Recipe:
@@ -25,7 +25,7 @@ class Recipe:
     '''
 
     def __init__(self, name=None, chef=None, ingredients=None, tools=None, rating=None,
-                 cooking_time=None, prep_time=None, total_time=None, date_created=None, date_updated=None):
+                 cooking_time=None, prep_time=None, total_time=None, date_created=datetime.now(), date_updated=datetime.now()):
         self.__name = name
         self.__chef = chef
         self.__ingredients = ingredients
@@ -34,8 +34,8 @@ class Recipe:
         self.__cooking_time = cooking_time
         self.__prep_time = prep_time
         self.__total_time = total_time
-        self.__date_created = date_created if not None else datetime.now()
-        self.__date_updated = date_updated if not None else datetime.now()
+        self.__date_created = date_created
+        self.__date_updated = date_updated
 
     # Using as a human-readable stringify method.
     def __str__(self):
@@ -45,7 +45,7 @@ class Recipe:
     # MARK: - Getters and setters
     def get_list(self):
         return [self.__name, self.__chef, self.__ingredients, self.__tools, self.__rating,
-                self.__cooking_time, self.__prep_time, self.__total_time, self.__date_created, self.__date_updated]
+                self.__cooking_time, self.__prep_time, self.__total_time, MasterTime.ts_to_str(self.__date_created), MasterTime.ts_to_str(self.__date_updated)]
 
     def name(self):
         return self.__name
