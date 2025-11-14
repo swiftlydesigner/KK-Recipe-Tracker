@@ -34,7 +34,7 @@ class Application:
 
         @staticmethod
         def __clear_screen():
-            os.system("clear || cls")
+            os.system("cls || clear")
 
 
         def __perform_menu_interaction(self, main_menu=False):
