@@ -181,7 +181,18 @@ class RecipeManager:
         # TODO: Use linear search
         # TODO: If there is time, use binary search
         # Search for recipe, by name
-        pass
+        if not name:
+            return -1
+        target = name.strip().lower()
+        for i, r in enumerate(self.__recipes):
+            rname = getattr(r, "name", "")
+            if not isinstance(rname, str):
+                continue
+            rname_l = rname.lower()
+            if (partial and target in rname_l) or (not partial and rname_l == target):
+                return i
+        return -1
+
 
     def __sort_recipes_by_time(self):
         for i in range(len(self.__recipes)):
