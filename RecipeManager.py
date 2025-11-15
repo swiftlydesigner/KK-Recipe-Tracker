@@ -42,7 +42,7 @@ class RecipeManager:
     def __read_from_psv(self):
         recipes = []
         try:
-            with open("Recipes.psv", "r") as file:
+            with open("recipes.psv", "r") as file:
                 lines = file.readlines()[1:] # Skip header
                 recipes = [RecipeFactory.create_from_psv_line(line) for line in lines]
 
@@ -53,7 +53,7 @@ class RecipeManager:
         except RecipeMalformedError:
             print("Input recipe list was malformed! No data could be read!")
         except:
-            print("Something went wrong while reading Recipes.csv. :(")
+            print("Something went wrong while reading recipes.csv. :(")
 
         return recipes
         # TODO: Complete Recipe Factory
