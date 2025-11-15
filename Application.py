@@ -65,7 +65,7 @@ class Application:
             self.__manager.search_for_recipe()
 
         def __add_recipe(self):
-            self.__manager.add_recipe
+            self.__manager.add_recipe()
 
         def __remove_recipe(self):
             self.__manager.remove_recipe()
