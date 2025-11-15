@@ -47,65 +47,83 @@ class Recipe:
         return [self.__name, self.__chef, self.__ingredients, self.__tools, self.__rating,
                 self.__cooking_time, self.__prep_time, self.__total_time, MasterTime.ts_to_str(self.__date_created), MasterTime.ts_to_str(self.__date_updated)]
 
+    @property
     def name(self):
         return self.__name
 
-    def update_name(self, name):
+    @name.setter
+    def name(self, name):
         self.__name = name
         self.__date_updated = datetime.now()
 
+    @property
     def chef(self):
         return self.__chef
 
-    def update_chef(self, chef):
+    @chef.setter
+    def chef(self, chef):
         self.__chef = chef
         self.__date_updated = datetime.now()
 
+    @property
     def ingredients(self):
         return self.__ingredients
 
-    def update_ingredients(self, ingredients):
+    @ingredients.setter
+    def ingredients(self, ingredients):
         self.__ingredients = ingredients
         self.__date_updated = datetime.now()
 
+    @property
     def tools(self):
         return self.__tools
 
-    def update_tools(self, tools):
+    @tools.setter
+    def tools(self, tools):
         self.__tools = tools
         self.__date_updated = datetime.now()
 
+    @property
     def rating(self):
         return self.__rating
 
-    def update_rating(self, rating):
+    @rating.setter
+    def rating(self, rating):
         self.__rating = rating
         self.__date_updated = datetime.now()
 
+    @property
     def cooking_time(self):
         return self.__cooking_time
 
-    def update_cooking_time(self, cooking_time):
+    @cooking_time.setter
+    def cooking_time(self, cooking_time):
         self.__cooking_time = cooking_time
         self.__date_updated = datetime.now()
 
+    @property
     def prep_time(self):
         return self.__prep_time
 
-    def update_prep_time(self, prep_time):
+    @prep_time.setter
+    def prep_time(self, prep_time):
         self.__prep_time = prep_time
         self.__date_updated = datetime.now()
 
+    @property
     def total_time(self):
         return self.__total_time
 
-    def update_total_time(self, total_time):
+    @total_time.setter
+    def total_time(self, total_time):
         self.__total_time = total_time
         self.__date_updated = datetime.now()
 
+    @property
     # The following dates do not have a setter as they should not be modified except by internal mechanics
     def date_created(self):
         return self.__date_created
 
+    @property
     def date_updated(self):
         return self.__date_updated
