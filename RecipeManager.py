@@ -526,7 +526,6 @@ class RecipeManager:
         pass
 
     def save_recipes(self) -> bool:
-        # TODO: Implement save_recipe
         success = False
 
         try:
