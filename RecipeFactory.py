@@ -54,14 +54,21 @@ class RecipeFactory:
         return ingredient_list
 
     @staticmethod
+    def __safe_convert_to_float(string):
+        try:
+            return float(string)
+        except ValueError:
+            return float("nan")
+
+    @staticmethod
     def __ingredient_from_str(ingredient):
         ingredient_obj = None # dead store, but easier to read
         parts = ingredient.split("?")
 
         if len(parts) == 3:
-            ingredient_obj = Ingredient(parts[0], float(parts[1]), parts[2])
+            ingredient_obj = Ingredient(parts[0], RecipeFactory.__safe_convert_to_float(parts[1]), parts[2])
         elif len(parts) == 2:
-            ingredient_obj = Ingredient(parts[0], float(parts[1]), None)
+            ingredient_obj = Ingredient(parts[0], RecipeFactory.__safe_convert_to_float(parts[1]), None)
         elif len(parts) == 1:
             ingredient_obj = Ingredient(parts[0], None, None)
 
