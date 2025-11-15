@@ -26,7 +26,7 @@ class Application:
                 "Remove Recipe" : self.__remove_recipe,
                 "Edit Recipe" : self.__edit_recipe,
                 "Sort Recipes" : self.__sort_recipes,
-                "Recommend Recipe" : self.__recommend_recipe,
+                #"Recommend Recipe" : self.__recommend_recipe,
                 "Load Recipes" : self.__load_recipes,
                 "Save Recipes" : self.__save_recipes,
                 "Exit" : self.__exit
