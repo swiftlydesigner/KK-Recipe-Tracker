@@ -186,7 +186,7 @@ class RecipeManager:
         target = name.strip().lower()
         for i, recipe in enumerate(self.__recipes):
             try:
-                recipe_name =str(getattr(recipe, "name", "")).lower()
+                recipe_name = recipe.name().lower()
                 if partial:
                     if target in recipe_name:
                         return i
