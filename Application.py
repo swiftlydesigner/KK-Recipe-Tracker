@@ -43,8 +43,8 @@ class Application:
             option = self.__menu.get_user_response()
             success = self.__menu.handle_user_response(option)
 
-            Application.__clear_screen()
             input("Press return to continue...")
+            Application.__clear_screen()
 
             return success
 
