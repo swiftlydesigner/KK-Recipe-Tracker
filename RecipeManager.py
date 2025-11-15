@@ -15,7 +15,8 @@ class RecipeManager:
         - __recipes: list of Recipe objects -> [Recipe]
     '''
     def __init__(self):
-        self.__recipes = self.__read_from_psv()
+        self.__recipes = []
+        self.load_recipes()
 
     def __del__(self):
         self.__save_recipes(self.__recipes)
@@ -521,7 +522,7 @@ class RecipeManager:
         pass
 
     def load_recipes(self) -> bool:
-        # TODO: Implement load_recipe
+        self.__recipes = self.__read_from_psv()
         pass
 
     def save_recipes(self) -> bool:
